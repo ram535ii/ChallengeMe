@@ -68,7 +68,7 @@
     </breakpoint_any>
     <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
     <line_breakpoints>
-      <breakpoint url="file://$PROJECT_DIR$/src/com/example/Sensor/SensorActivity.java" line="81" class="com.example.Sensor.SensorActivity" package="com.example.Sensor">
+      <breakpoint url="file://$PROJECT_DIR$/src/com/example/Sensor/SensorActivity.java" line="91" class="com.example.Sensor.SensorActivity" package="com.example.Sensor">
         <option name="ENABLED" value="true" />
         <option name="LOG_ENABLED" value="false" />
         <option name="LOG_EXPRESSION_ENABLED" value="false" />
@@ -83,7 +83,7 @@
         <option name="CONDITION" value="" />
         <option name="LOG_MESSAGE" value="" />
       </breakpoint>
-      <breakpoint url="file://$PROJECT_DIR$/src/com/example/Sensor/SensorActivity.java" line="94" class="com.example.Sensor.SensorActivity" package="com.example.Sensor">
+      <breakpoint url="file://$PROJECT_DIR$/src/com/example/Sensor/SensorActivity.java" line="104" class="com.example.Sensor.SensorActivity" package="com.example.Sensor">
         <option name="ENABLED" value="true" />
         <option name="LOG_ENABLED" value="false" />
         <option name="LOG_EXPRESSION_ENABLED" value="false" />
@@ -98,7 +98,7 @@
         <option name="CONDITION" value="" />
         <option name="LOG_MESSAGE" value="" />
       </breakpoint>
-      <breakpoint url="file://$PROJECT_DIR$/src/com/example/Sensor/SensorActivity.java" line="99" class="com.example.Sensor.SensorActivity" package="com.example.Sensor">
+      <breakpoint url="file://$PROJECT_DIR$/src/com/example/Sensor/SensorActivity.java" line="109" class="com.example.Sensor.SensorActivity" package="com.example.Sensor">
         <option name="ENABLED" value="true" />
         <option name="LOG_ENABLED" value="false" />
         <option name="LOG_EXPRESSION_ENABLED" value="false" />
@@ -113,7 +113,7 @@
         <option name="CONDITION" value="" />
         <option name="LOG_MESSAGE" value="" />
       </breakpoint>
-      <breakpoint url="file://$PROJECT_DIR$/src/com/example/Sensor/SensorActivity.java" line="47" class="com.example.Sensor.SensorActivity" package="com.example.Sensor">
+      <breakpoint url="file://$PROJECT_DIR$/src/com/example/Sensor/SensorActivity.java" line="57" class="com.example.Sensor.SensorActivity" package="com.example.Sensor">
         <option name="ENABLED" value="true" />
         <option name="LOG_ENABLED" value="false" />
         <option name="LOG_EXPRESSION_ENABLED" value="false" />
@@ -128,7 +128,7 @@
         <option name="CONDITION" value="" />
         <option name="LOG_MESSAGE" value="" />
       </breakpoint>
-      <breakpoint url="file://$PROJECT_DIR$/src/com/example/Sensor/SensorActivity.java" line="52" class="com.example.Sensor.SensorActivity" package="com.example.Sensor">
+      <breakpoint url="file://$PROJECT_DIR$/src/com/example/Sensor/SensorActivity.java" line="62" class="com.example.Sensor.SensorActivity" package="com.example.Sensor">
         <option name="ENABLED" value="true" />
         <option name="LOG_ENABLED" value="false" />
         <option name="LOG_EXPRESSION_ENABLED" value="false" />
@@ -143,7 +143,7 @@
         <option name="CONDITION" value="&#13;&#13;JAVA" />
         <option name="LOG_MESSAGE" value="&#13;&#13;JAVA" />
       </breakpoint>
-      <breakpoint url="file://$PROJECT_DIR$/src/com/example/Sensor/SensorActivity.java" line="59" class="com.example.Sensor.SensorActivity" package="com.example.Sensor">
+      <breakpoint url="file://$PROJECT_DIR$/src/com/example/Sensor/SensorActivity.java" line="69" class="com.example.Sensor.SensorActivity" package="com.example.Sensor">
         <option name="ENABLED" value="true" />
         <option name="LOG_ENABLED" value="false" />
         <option name="LOG_EXPRESSION_ENABLED" value="false" />
@@ -171,10 +171,11 @@
       <file leaf-file-name="main.xml" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/res/layout/main.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="33" column="42" selection-start="1314" selection-end="1314" vertical-scroll-proportion="-3.4615386" vertical-offset="315" max-vertical-offset="915">
+            <state line="90" column="39" selection-start="3160" selection-end="3160" vertical-scroll-proportion="-5.7884617" vertical-offset="1049" max-vertical-offset="1560">
               <folding>
                 <element signature="e#426#448#0" expanded="true" />
                 <element signature="e#624#645#0" expanded="true" />
+                <element signature="e#2116#2136#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -183,10 +184,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SensorActivity.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="SensorActivity.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/example/Sensor/SensorActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="50" column="1" selection-start="1735" selection-end="1735" vertical-scroll-proportion="0.0" vertical-offset="617" max-vertical-offset="1740">
+            <state line="149" column="1" selection-start="5319" selection-end="5319" vertical-scroll-proportion="0.76404494" vertical-offset="1895" max-vertical-offset="2340">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -197,13 +198,13 @@
       <file leaf-file-name="GPSTracker.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/example/Sensor/GPSTracker.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="58" column="5" selection-start="1792" selection-end="1792" vertical-scroll-proportion="0.0" vertical-offset="553" max-vertical-offset="2580">
+            <state line="112" column="46" selection-start="4134" selection-end="4134" vertical-scroll-proportion="0.0" vertical-offset="1460" max-vertical-offset="2640">
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#4833#5098#0" expanded="true" />
-                <element signature="e#5087#5088#0" expanded="true" />
-                <element signature="e#5150#5315#0" expanded="true" />
-                <element signature="e#5304#5305#0" expanded="true" />
+                <element signature="e#4960#5225#0" expanded="true" />
+                <element signature="e#5214#5215#0" expanded="true" />
+                <element signature="e#5277#5442#0" expanded="true" />
+                <element signature="e#5431#5432#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -233,16 +234,16 @@
       <file leaf-file-name="strings.xml" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/res/values/strings.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="5" column="60" selection-start="257" selection-end="257" vertical-scroll-proportion="-3.0" vertical-offset="0" max-vertical-offset="195">
+            <state line="6" column="36" selection-start="303" selection-end="303" vertical-scroll-proportion="-3.6" vertical-offset="0" max-vertical-offset="210">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AndroidManifest.xml" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="AndroidManifest.xml" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/AndroidManifest.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="22" column="22" selection-start="1094" selection-end="1094" vertical-scroll-proportion="0.74157304" vertical-offset="0" max-vertical-offset="525">
+            <state line="22" column="22" selection-start="1094" selection-end="1094" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="525">
               <folding>
                 <element signature="e#504#522#0" expanded="true" />
                 <element signature="e#641#659#0" expanded="true" />
@@ -262,11 +263,11 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/res/values/strings.xml" />
         <option value="$PROJECT_DIR$/src/com/example/Sensor/DisplayMessageActivity.java" />
-        <option value="$PROJECT_DIR$/res/layout/main.xml" />
         <option value="$PROJECT_DIR$/AndroidManifest.xml" />
+        <option value="$PROJECT_DIR$/res/values/strings.xml" />
         <option value="$PROJECT_DIR$/src/com/example/Sensor/GPSTracker.java" />
+        <option value="$PROJECT_DIR$/res/layout/main.xml" />
         <option value="$PROJECT_DIR$/src/com/example/Sensor/SensorActivity.java" />
       </list>
     </option>
@@ -658,6 +659,24 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/example/Sensor/DisplayMessageActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="15" column="10" selection-start="434" selection-end="434" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="465">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AndroidManifest.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="22" column="22" selection-start="1094" selection-end="1094" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="525">
+          <folding>
+            <element signature="e#504#522#0" expanded="true" />
+            <element signature="e#641#659#0" expanded="true" />
+            <element signature="e#970#1010#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/res/layout/activity_display_message.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="418">
@@ -670,17 +689,31 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/res/values/strings.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="60" selection-start="257" selection-end="257" vertical-scroll-proportion="-3.0" vertical-offset="0" max-vertical-offset="195">
+        <state line="6" column="36" selection-start="303" selection-end="303" vertical-scroll-proportion="-3.6" vertical-offset="0" max-vertical-offset="210">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/example/Sensor/GPSTracker.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="112" column="46" selection-start="4134" selection-end="4134" vertical-scroll-proportion="0.0" vertical-offset="1460" max-vertical-offset="2640">
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#4960#5225#0" expanded="true" />
+            <element signature="e#5214#5215#0" expanded="true" />
+            <element signature="e#5277#5442#0" expanded="true" />
+            <element signature="e#5431#5432#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/res/layout/main.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="33" column="42" selection-start="1314" selection-end="1314" vertical-scroll-proportion="-3.4615386" vertical-offset="315" max-vertical-offset="915">
+        <state line="90" column="39" selection-start="3160" selection-end="3160" vertical-scroll-proportion="-5.7884617" vertical-offset="1049" max-vertical-offset="1560">
           <folding>
             <element signature="e#426#448#0" expanded="true" />
             <element signature="e#624#645#0" expanded="true" />
+            <element signature="e#2116#2136#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -688,42 +721,11 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/example/Sensor/DisplayMessageActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="10" selection-start="434" selection-end="434" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="465">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/example/Sensor/GPSTracker.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="58" column="5" selection-start="1792" selection-end="1792" vertical-scroll-proportion="0.0" vertical-offset="553" max-vertical-offset="2580">
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#4833#5098#0" expanded="true" />
-            <element signature="e#5087#5088#0" expanded="true" />
-            <element signature="e#5150#5315#0" expanded="true" />
-            <element signature="e#5304#5305#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/example/Sensor/SensorActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="50" column="1" selection-start="1735" selection-end="1735" vertical-scroll-proportion="0.0" vertical-offset="617" max-vertical-offset="1740">
+        <state line="149" column="1" selection-start="5319" selection-end="5319" vertical-scroll-proportion="0.76404494" vertical-offset="1895" max-vertical-offset="2340">
           <folding>
             <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/AndroidManifest.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="22" selection-start="1094" selection-end="1094" vertical-scroll-proportion="0.74157304" vertical-offset="0" max-vertical-offset="525">
-          <folding>
-            <element signature="e#504#522#0" expanded="true" />
-            <element signature="e#641#659#0" expanded="true" />
-            <element signature="e#970#1010#0" expanded="true" />
           </folding>
         </state>
       </provider>

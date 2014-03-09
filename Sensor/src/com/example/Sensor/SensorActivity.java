@@ -26,6 +26,14 @@ public class SensorActivity extends Activity{
     private LocationManager locationManager;
     private String provider;
 
+    boolean loclak = true;
+    Location location1;
+    Location location2;
+    long time1;
+    long time2;
+    private TextView distanceField;
+    private TextView crudeAvgSpeedField;
+
     /**
      * Called when the activity is first created.
      */
@@ -37,6 +45,8 @@ public class SensorActivity extends Activity{
         //GPS added
         latitudeField = (TextView)findViewById(R.id.TextView02);
         longitudeField = (TextView)findViewById(R.id.TextView04);
+        distanceField = (TextView)findViewById(R.id.TextView05);
+        crudeAvgSpeedField = (TextView)findViewById(R.id.TextView08);
 /***
         //location manager
         locationManager = (LocationManager)getSystemService(Context.LOCATION_SERVICE);
@@ -106,5 +116,35 @@ public class SensorActivity extends Activity{
         String message = editText.getText().toString();
         intent.putExtra(EXTRA_MESSAGE, message);
         startActivity(intent);
+    }
+
+    public void updateGPS(View view){
+        GPSTracker gps = new GPSTracker(this);
+
+        if(gps.canGetLocation()){
+            latitudeField.setText(String.valueOf(gps.getLatitude()));
+            longitudeField.setText(String.valueOf(gps.getLongitude()));
+
+            if(loclak){
+                location1 = gps.getLocation();
+                time1 = System.nanoTime();
+                loclak = false;
+            } else {
+                location2 = gps.getLocation();
+                time2 = System.nanoTime();
+                loclak = true;
+
+                //longs act weird so use floats.
+                float distanceBn = gps.distanceBetween(location2,location1);
+                float timeBn = ((float)time2 - (float)time1) / 1000000000; //ns -> s
+                float avgSpeed = distanceBn / timeBn;
+
+                Toast.makeText(getApplicationContext(),"Distance:" + distanceBn + "\nTime:" + timeBn + "\nSpeed:" + avgSpeed ,Toast.LENGTH_LONG).show();
+
+                distanceField.setText(String.valueOf(distanceBn));
+                crudeAvgSpeedField.setText(String.valueOf(avgSpeed));
+            }
+            //Toast.makeText(getApplicationContext(), "Your Location is - \nLat: " + gps.getLatitude() + "\nLong: " + gps.getLongitude()+ "\n: " + gps.getLongitude(), Toast.LENGTH_LONG).show();
+        }
     }
 }

@@ -109,6 +109,10 @@ public class GPSTracker extends Service implements LocationListener {
         return location;
     }
 
+    public float distanceBetween(Location currentLoc, Location prevLoc){
+        return currentLoc.distanceTo(prevLoc);
+    }
+
     @Override
     public void onLocationChanged(Location location) {
 

@@ -51,5 +51,48 @@
                 android:text="unknown"
                 android:textSize="20dip" >
         </TextView>
+
+    <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/button_gps"
+            android:onClick="updateGPS"/>
+
+
+    <TextView
+            android:id="@+id/TextView06"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dip"
+            android:layout_marginRight="5dip"
+            android:text="Distance: "
+            android:textSize="20dip" >
+    </TextView>
+
+    <TextView
+            android:id="@+id/TextView05"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="unknown"
+            android:textSize="20dip" >
+    </TextView>
+
+    <TextView
+            android:id="@+id/TextView07"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dip"
+            android:layout_marginRight="5dip"
+            android:text="Crude Avg Speed: "
+            android:textSize="20dip" >
+    </TextView>
+
+    <TextView
+            android:id="@+id/TextView08"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="unknown"
+            android:textSize="20dip" >
+    </TextView>
 </LinearLayout>
 
