@@ -18,7 +18,7 @@ import android.widget.Toast;
  * Created by ConstantijnSchepens on 09/03/14.
  * Source of GPS help: http://www.androidhive.info/2012/07/android-gps-location-manager-tutorial/
  */
-public class GPSTracker extends Service implements LocationListener {
+public class GPSTracker extends Service implements LocationListener{
 
     //variable declaration
     private final Context mContext;
@@ -32,7 +32,7 @@ public class GPSTracker extends Service implements LocationListener {
     double   latitude;                  //lat
     double   longitude;                 //long
 
-    private static final long MIN_DISTANCE_CHANGE_FOR_UPDATES   = 10;   //10m
+    private static final long MIN_DISTANCE_CHANGE_FOR_UPDATES   = 1;   //10m
     private static final long MIN_TIME_BW_UPDATES               = 1000; //1min
 
     protected LocationManager locationManager;      //location manager declaration
