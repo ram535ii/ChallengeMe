@@ -45,6 +45,8 @@ public class SensorActivity extends Activity{
     private Intent baroIntent;
     private Intent gpsIntent;
 
+    SensorController controller;
+
     /**
      * Called when the activity is first created.
      */
@@ -59,92 +61,28 @@ public class SensorActivity extends Activity{
         distanceField       = (TextView)findViewById(R.id.TextView05);
         crudeAvgSpeedField  = (TextView)findViewById(R.id.TextView08);
         baroField           = (TextView)findViewById(R.id.TextView09);
-/***
-        //location manager
-        locationManager = (LocationManager)getSystemService(Context.LOCATION_SERVICE);
-        //criteria definition to select loc provider
-        Criteria criteria = new Criteria();
-        provider = locationManager.getBestProvider(criteria,false);
-        Location location = locationManager.getLastKnownLocation(provider);
 
-        if(location != null){
-            //System.out.println("Provider " + provider + " has been selected");
-            System.out.println("A provider has been selected.");
-            onLocationChanged(location);
-        } else {
-            latitudeField.setText("Location not available");
-            longitudeField.setText("Location not available");
-        }
-***/
-
-//        GPSTracker gps = new GPSTracker(this);
-//
-//        if(gps.canGetLocation()){
-//            latitudeField.setText(String.valueOf(gps.getLatitude()));
-//            longitudeField.setText(String.valueOf(gps.getLongitude()));
-//
-//            Toast.makeText(getApplicationContext(), "Your Location is - \nLat: " + gps.getLatitude() + "\nLong: " + gps.getLongitude(), Toast.LENGTH_LONG).show();
-//            //baro = new BaroTracker(this);
-//        }
-
-        /** Start the barometer service **/
-        startService(new Intent(getBaseContext(), Baro.class));
-        baroIntent = new Intent(this, Baro.class);
-
-        /** Start the GPS service **/
-        startService(new Intent(getBaseContext(), GPS.class));
-        gpsIntent = new Intent(this, GPS.class);
+        /** Start Sensor Controller **/
+        controller = new SensorController(this,true,true);
     }
     //random functions
     @Override
     protected void onResume(){
         super.onResume();
-        //locationManager.requestLocationUpdates(provider, 400, 1, this);
-        startService(baroIntent);
-        registerReceiver(broadcastReceiver, new IntentFilter(Baro.BROADCAST_ACTION));
 
-        startService(gpsIntent);
-        registerReceiver(broadcastReceiver, new IntentFilter(GPS.BROADCAST_ACTION));
+        controller.startSensor(this, true, true);
     }
 
     @Override
     protected void onPause(){
         super.onPause();
-        //locationManager.removeUpdates(this);
-        unregisterReceiver(broadcastReceiver);
-        stopService(baroIntent);
 
-        stopService(gpsIntent);
-    }
-   /**
-
-    @Override
-    public void onLocationChanged(Location location){
-        int lat = (int) (location.getLatitude());
-        int lng = (int) (location.getLongitude());
-        latitudeField.setText(String.valueOf(lat));
-        longitudeField.setText(String.valueOf(lng));
+        controller.stopSensor(this, true, true);
     }
 
-    @Override
-    public void onStatusChanged(String provider, int status, Bundle extras){
-        //TODO
-    }
-
-    @Override
-    public void onProviderEnabled(String provider){
-        Toast.makeText(this, "Enabled new provider" + provider, Toast.LENGTH_SHORT).show();
-    }
-
-    @Override
-    public void onProviderDisabled(String provider){
-        Toast.makeText(this, "Disabled provider" + provider, Toast.LENGTH_SHORT).show();
-    }
-**/
     @Override
     public void onDestroy(){
-        /** Start the barometer service**/
-        stopService(new Intent(getBaseContext(), Baro.class));
+        controller.stopSensor(this, true, true);
     }
 
     public void sendMessage(View view){
@@ -156,62 +94,37 @@ public class SensorActivity extends Activity{
     }
 
     public void updateGPS(View view){
-//        GPSTracker gps = new GPSTracker(this);
-//
-//        if(gps.canGetLocation()){
-//            latitudeField.setText(String.valueOf(gps.getLatitude()));
-//            longitudeField.setText(String.valueOf(gps.getLongitude()));
-//
-//            if(loclak){
-//                location1 = gps.getLocation();
-//                time1 = System.nanoTime();
-//                loclak = false;
-//            } else {
-//                location2 = gps.getLocation();
-//                time2 = System.nanoTime();
-//                loclak = true;
-//
-//                //longs acts weird so use floats.
-//                float distanceBn = gps.distanceBetween(location2,location1);
-//                float timeBn = ((float)time2 - (float)time1) / 1000000000; //ns -> s
-//                float avgSpeed = distanceBn / timeBn;
-//
-//                Toast.makeText(getApplicationContext(),"Distance:" + distanceBn + "\nTime:" + timeBn + "\nSpeed:" + avgSpeed ,Toast.LENGTH_LONG).show();
-//
-//                distanceField.setText(String.valueOf(distanceBn));
-//                crudeAvgSpeedField.setText(String.valueOf(avgSpeed));
-//            }
-//            //Toast.makeText(getApplicationContext(), "Your Location is - \nLat: " + gps.getLatitude() + "\nLong: " + gps.getLongitude()+ "\n: " + gps.getLongitude(), Toast.LENGTH_LONG).show();
-//        }
-        startService(gpsIntent);
+        latitudeField.setText(String.valueOf(controller.getLatitude()));
+        longitudeField.setText(String.valueOf(controller.getLongitude()));
+
+        /** Speed calculation experiment **/
+        if(loclak){
+            location1 = controller.getLocation();
+            time1 = System.nanoTime();
+            loclak = false;
+        } else {
+            location2 = controller.getLocation();
+            time2 = System.nanoTime();
+            loclak = true;
+
+            //longs acts weird so use floats.
+            float distanceBn = distanceBetween(location1,location2);
+            float timeBn = timeBetween(time1,time2);
+            float avgSpeed = distanceBn / timeBn;
+
+            Toast.makeText(getApplicationContext(),"Distance:" + distanceBn + "\nTime:" + timeBn + "\nSpeed:" + avgSpeed ,Toast.LENGTH_LONG).show();
+
+            distanceField.setText(String.valueOf(distanceBn));
+            crudeAvgSpeedField.setText(String.valueOf(avgSpeed));
+        }
+        //Toast.makeText(getApplicationContext(), "Your Location is - \nLat: " + gps.getLatitude() + "\nLong: " + gps.getLongitude()+ "\n: " + gps.getLongitude(), Toast.LENGTH_LONG).show();
 
     }
     public void updateBaro(View view){
-        //float height = baro.getHeight();
-
-        //float height = Baro
-
-        //baroField.setText(String.valueOf(height));
-
-        /**  **/
-//        SensorManager sensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
-//        Sensor barometerSensor = sensorManager.getDefaultSensor(Sensor.TYPE_PRESSURE);
-//
-//        sensorManager.registerListener(this, barometerSensor, SensorManager.SENSOR_DELAY_NORMAL);
-        startService(baroIntent);
+        /** Sensor Controller Method **/
+        baroField.setText(String.valueOf(controller.getHeight()));
    }
 
-//    public final void onSensorChanged(SensorEvent event) {
-//        float millibars_of_pressure = event.values[0];
-//        float height = SensorManager.getAltitude(SensorManager.PRESSURE_STANDARD_ATMOSPHERE,millibars_of_pressure);
-//        String s = Float.toString(height);
-//
-//        baroField.setText(s);
-//    }
-//    @Override
-//    public final void onAccuracyChanged(Sensor sensor, int accuracy) {
-//        // Do something here if sensor accuracy changes.
-//    }
 
     /** Receiver to receive updated info from barometer **/
     private BroadcastReceiver broadcastReceiver = new BroadcastReceiver() {
@@ -238,4 +151,14 @@ public class SensorActivity extends Activity{
             longitudeField.setText(String.valueOf(String.valueOf(lon)));
         }
     }
+
+    /** Helper Functions **/
+    private float distanceBetween(Location loc1, Location loc2){
+        return loc1.distanceTo(loc2);
+    }
+
+    private float timeBetween(long t1, long t2){
+        return ((float)t2 - (float)t1) / 1000000000; //ns -> s
+    }
+
 }

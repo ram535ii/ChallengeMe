@@ -65,7 +65,7 @@ public class Baro extends Service implements SensorEventListener{
     @Override
     public int onStartCommand(Intent intent, int flags, int startId){
         //called when started
-        intent = new Intent(BROADCAST_ACTION);
+        intent = new Intent(BROADCAST_ACTION);  //<- put in onChanged
         intent.putExtra("height", height);
         sendBroadcast(intent);
 
@@ -123,6 +123,6 @@ public class Baro extends Service implements SensorEventListener{
 
         intent = new Intent(BROADCAST_ACTION);
         intent.putExtra("height", height);
-        //sendBroadcast(intent);
+        sendBroadcast(intent);
     }
 }

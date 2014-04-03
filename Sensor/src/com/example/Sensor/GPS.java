@@ -43,7 +43,6 @@ public class GPS extends Service implements LocationListener {
         intent = new Intent(BROADCAST_ACTION);
 
         //startup code
-        //Barometer Setup
         try {
             locationManager = (LocationManager) getSystemService(LOCATION_SERVICE);
             c = new Criteria();
@@ -75,12 +74,15 @@ public class GPS extends Service implements LocationListener {
         if(currentLoc != null){
             latitude = currentLoc.getLatitude();
             longitude = currentLoc.getLongitude();
-        }
 
-        intent = new Intent(BROADCAST_ACTION); //clear intent
-        intent.putExtra("latitude", (float)currentLoc.getLatitude());
-        intent.putExtra("longitude", (float)currentLoc.getLongitude());
-        sendBroadcast(intent);
+            /** Ensure app doesn't crash on start with in first location **/
+            intent = new Intent(BROADCAST_ACTION); //clear intent
+            intent.putExtra("latitude", (float)currentLoc.getLatitude());
+            intent.putExtra("longitude", (float)currentLoc.getLongitude());
+            sendBroadcast(intent);
+        } else {
+            Toast.makeText(this, "current==NULL", Toast.LENGTH_SHORT).show();
+        }
 
         return 1;
     }
