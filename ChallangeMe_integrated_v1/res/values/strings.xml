@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">ChallangeMe_v1</string>
+
+    <string name="challange">Challange Me</string>
+
+    <!-- other -->
+    <string name="timerVal">00:00:00</string>
+
+    <!-- Challanges -->
+    <string name="ski">Ski</string>
+    <string name="random">Random</string>
+    <string name="bike">Bike</string>
+
+
+    <!-- Activities -->
+    <string name="title_activity_display_message">My Message</string>
+</resources>
