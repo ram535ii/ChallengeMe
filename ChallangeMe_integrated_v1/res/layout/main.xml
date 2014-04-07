@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="fill_parent"
+              android:layout_height="fill_parent"
+        >
+    <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="Select a Game"
+            android:textSize="40dp"
+            android:gravity="center_horizontal"
+
+            />
+    <Button
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/ski"
+            android:id="@+id/buttonSki"
+            android:layout_gravity="center_horizontal"
+            android:textSize="30dp"
+            android:onClick="selectOpponent" />
+            />
+    <Button
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/bike"
+            android:id="@+id/buttonBike"
+            android:layout_gravity="center_horizontal"
+            android:textSize="30dp"
+            android:onClick="selectOpponent" />
+            />
+    <Button
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/random"
+            android:id="@+id/buttonRandom"
+            android:layout_gravity="center_horizontal"
+            android:textSize="30dp"
+            android:onClick="selectOpponent" />
+    <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="User Settings"
+            android:textSize="40dp"
+            android:gravity="center_horizontal"
+
+            android:layout_marginTop="40dp"/>
+    <Button
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="Update"
+            android:id="@+id/update"
+            android:layout_gravity="center_horizontal"
+            android:textSize="30dp"
+            android:onClick="update" />
+    />
+</LinearLayout>
+
