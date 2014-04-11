@@ -60,6 +60,9 @@ public class GPS extends Service implements LocationListener {
             handler.removeCallbacks(sendUpdatesToUI);
             handler.postDelayed(sendUpdatesToUI, 1000); // 1 second
 //            Toast.makeText(this, "GPS Service Started", Toast.LENGTH_LONG).show();
+
+            latitude  = 0;
+            longitude = 0;
         } catch (Exception e){
             Log.e(TAG, "Unable to start GPS", e);
             Toast.makeText(this, "Unable to start GPS: " + e.toString(), Toast.LENGTH_LONG).show();

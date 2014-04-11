@@ -3,13 +3,7 @@ package com.example.Sensor;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
-import android.hardware.Sensor;
-import android.hardware.SensorEvent;
-import android.hardware.SensorEventListener;
-import android.hardware.SensorManager;
-import android.location.Criteria;
 import android.location.Location;
-import android.location.LocationListener;
 import android.location.LocationManager;
 import android.os.Bundle;
 import android.view.View;
@@ -17,7 +11,6 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.content.BroadcastReceiver;
-import android.content.IntentFilter;
 
 /**
  * GPS Code source:http://www.vogella.com/tutorials/AndroidLocationAPI/article.html
@@ -45,6 +38,8 @@ public class SensorActivity extends Activity{
     private Intent baroIntent;
     private Intent gpsIntent;
 
+    private TextView xField, yField, zField;
+
     SensorController controller;
 
     /**
@@ -61,28 +56,31 @@ public class SensorActivity extends Activity{
         distanceField       = (TextView)findViewById(R.id.TextView05);
         crudeAvgSpeedField  = (TextView)findViewById(R.id.TextView08);
         baroField           = (TextView)findViewById(R.id.TextView09);
+        xField              = (TextView)findViewById(R.id.TextView10);
+        yField              = (TextView)findViewById(R.id.TextView11);
+        zField              = (TextView)findViewById(R.id.TextView12);
 
         /** Start Sensor Controller **/
-        controller = new SensorController(this,true,true);
+        controller = new SensorController(this, true, false, true);
     }
     //random functions
     @Override
     protected void onResume(){
         super.onResume();
 
-        controller.startSensor(this, true, true);
+        controller.startSensor(this, true, false, true);
     }
 
     @Override
     protected void onPause(){
         super.onPause();
 
-        controller.stopSensor(this, true, true);
+        controller.stopSensor(this, true, false, true);
     }
 
     @Override
     public void onDestroy(){
-        controller.stopSensor(this, true, true);
+        controller.stopSensor(this, true, false, true);
     }
 
     public void sendMessage(View view){
@@ -99,11 +97,11 @@ public class SensorActivity extends Activity{
 
         /** Speed calculation experiment **/
         if(loclak){
-            location1 = controller.getLocation();
+//            location1 = controller.getLoc();
             time1 = System.nanoTime();
             loclak = false;
         } else {
-            location2 = controller.getLocation();
+//            location2 = controller.getLoc();
             time2 = System.nanoTime();
             loclak = true;
 
@@ -122,35 +120,41 @@ public class SensorActivity extends Activity{
     }
     public void updateBaro(View view){
         /** Sensor Controller Method **/
-        baroField.setText(String.valueOf(controller.getHeight()));
+        baroField.setText("Height:" + String.valueOf(controller.getHeight()));
    }
 
+   public void updateAccel(View view){
+       xField.setText("x:" + String.valueOf(controller.getX()));
+       yField.setText("y:" + String.valueOf(controller.getY()));
+       zField.setText("z:" + String.valueOf(controller.getZ()));
+   }
 
-    /** Receiver to receive updated info from barometer **/
-    private BroadcastReceiver broadcastReceiver = new BroadcastReceiver() {
-        @Override
-        public void onReceive(Context context, Intent intent) {
-            /** Code to handle new received height**/
-            //TODO
-            updateUI(intent);
-        }
-    };
-
-    private void updateUI(Intent intent) {
-        String action = intent.getAction();
-        if(action.equals("com.example.Sensor.broadcastHeight")){
-            float height = intent.getFloatExtra("height", 0);
-
-            baroField.setText(String.valueOf(height));
-        } else if(action.equals("com.example.Sensor.broadcastGPS")){
-            //TODO
-            float lat = intent.getFloatExtra("latitude", 0);
-            float lon = intent.getFloatExtra("longitude", 0);
-
-            latitudeField.setText(String.valueOf(String.valueOf(lat)));
-            longitudeField.setText(String.valueOf(String.valueOf(lon)));
-        }
-    }
+/** This class no longer needs to receive information itself anymore **/
+//    /** Receiver to receive updated info from barometer **/
+//    private BroadcastReceiver broadcastReceiver = new BroadcastReceiver() {
+//        @Override
+//        public void onReceive(Context context, Intent intent) {
+//            /** Code to handle new received height**/
+//            //TODO
+//            updateUI(intent);
+//        }
+//    };
+//
+//    private void updateUI(Intent intent) {
+//        String action = intent.getAction();
+//        if(action.equals("com.example.Sensor.broadcastHeight")){
+//            float height = intent.getFloatExtra("height", 0);
+//
+//            baroField.setText("Height:" + String.valueOf(height));
+//        } else if(action.equals("com.example.Sensor.broadcastGPS")){
+//            //TODO
+//            double lat = intent.getFloatExtra("latitude", 0);
+//            double lon = intent.getFloatExtra("longitude", 0);
+//
+//            latitudeField.setText(String.valueOf(String.valueOf(lat)));
+//            longitudeField.setText(String.valueOf(String.valueOf(lon)));
+//        }
+//    }
 
     /** Helper Functions **/
     private float distanceBetween(Location loc1, Location loc2){

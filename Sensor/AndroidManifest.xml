@@ -27,5 +27,6 @@
         </activity>
         <service android:name=".Baro" />
         <service android:name=".GPS" />
+        <service android:name=".Accel"/>
     </application>
 </manifest>

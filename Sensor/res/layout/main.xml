@@ -111,5 +111,38 @@
             android:text="Height: "
             android:textSize="20dip" >
     </TextView>
+
+    <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/button_gps"
+            android:onClick="updateAccel"/>
+    <TextView
+            android:id="@+id/TextView10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dip"
+            android:layout_marginRight="5dip"
+            android:text="Height: "
+            android:textSize="20dip" >
+    </TextView>
+    <TextView
+            android:id="@+id/TextView11"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dip"
+            android:layout_marginRight="5dip"
+            android:text="Height: "
+            android:textSize="20dip" >
+    </TextView>
+    <TextView
+            android:id="@+id/TextView12"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dip"
+            android:layout_marginRight="5dip"
+            android:text="Height: "
+            android:textSize="20dip" >
+    </TextView>
 </LinearLayout>
 
