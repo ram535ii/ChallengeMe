@@ -29,15 +29,17 @@ public class SensorController{
     /** class variables **/
     private Intent baroIntent;
     private Intent gpsIntent;
+    private Intent accelIntent;
 
     private float maxHeight;
     private float height;
-    private float latitude;
-    private float longitude;
+    private double latitude;
+    private double longitude;
 //    private Location location;
+    private float x, y, z;
 
     /** constructors **/
-    public SensorController(Context context, boolean baroOn, boolean gpsOn){
+    public SensorController(Context context, boolean baroOn, boolean gpsOn, boolean accelOn){
         if(baroOn){
             baroIntent = new Intent(context, Baro.class);
             context.startService(baroIntent);
@@ -48,11 +50,17 @@ public class SensorController{
             context.startService(gpsIntent);
             context.registerReceiver(broadcastReceiver, new IntentFilter(GPS.BROADCAST_ACTION));
         }
+        if (accelOn){
+            accelIntent = new Intent(context, Accel.class);
+            context.startService(accelIntent);
+            context.registerReceiver(broadcastReceiver, new IntentFilter(Accel.BROADCAST_ACTION));
+        }
         //initialise variables
         longitude = 0;
         latitude = 0;
         height = 0;
         maxHeight = 0;
+        x = y = z = 0;
     }
 
     /** get/set
@@ -60,13 +68,16 @@ public class SensorController{
 
     public float getHeight(){ return height; }
     public float getMaxHeight() {return maxHeight; }
-    public float getLatitude(){ return latitude; }
-    public float getLongitude(){ return longitude; }
+    public double getLatitude(){ return latitude; }
+    public double getLongitude(){ return longitude; }
 //    public Location getLocation() { return location; }
+    public float getX(){ return x; }
+    public float getY(){ return y; }
+    public float getZ(){ return z; }
 
 
     /** class methods **/
-    public void startSensor(Context context, boolean baro, boolean gps){
+    public void startSensor(Context context, boolean baro, boolean gps, boolean accel){
         if(baro){
             context.startService(baroIntent);
             context.registerReceiver(broadcastReceiver, new IntentFilter(Baro.BROADCAST_ACTION));
@@ -75,16 +86,23 @@ public class SensorController{
             context.startService(gpsIntent);
             context.registerReceiver(broadcastReceiver, new IntentFilter(GPS.BROADCAST_ACTION));
         }
+        if(accel){
+            context.startService(accelIntent);
+            context.registerReceiver(broadcastReceiver, new IntentFilter(Accel.BROADCAST_ACTION));
+        }
     }
 
-    public void stopSensor(Context context, boolean baro, boolean gps){
+    public void stopSensor(Context context, boolean baro, boolean gps, boolean accel){
         if(baro)
             context.stopService(baroIntent);
 
         if(gps)
             context.stopService(gpsIntent);
 
-        if(baro && gps)
+        if(accel)
+            context.stopService(accelIntent);
+
+        if(baro && gps && accel)
             context.unregisterReceiver(broadcastReceiver);
     }
 
@@ -107,12 +125,16 @@ public class SensorController{
 
         } else if(action.equals("com.example.Sensor.broadcastGPS")){
             //TODO
-            latitude = intent.getFloatExtra("latitude", 0);
+            latitude = intent.getDoubleExtra("latitude", 0);
 //            location.setLatitude(latitude);
 
-            longitude = intent.getFloatExtra("longitude", 0);
+            longitude = intent.getDoubleExtra("longitude", 0);
 //            location.setLongitude(longitude);
 
+        } else if(action.equals("com.example.Sensor.broadcastAccel")){
+            x = intent.getFloatExtra("x", 0);
+            y = intent.getFloatExtra("y", 0);
+            z = intent.getFloatExtra("z", 0);
         }
     }
 }
