@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="libs">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/libs/ForwardingLayerApi.jar!/" />
+      <root url="jar://$PROJECT_DIR$/libs/DtnMiddlewareUtil.jar!/" />
+      <root url="jar://$PROJECT_DIR$/libs/osgi.core.jar!/" />
+      <root url="jar://$PROJECT_DIR$/libs/DtnMiddlewareApi.jar!/" />
+      <root url="jar://$PROJECT_DIR$/libs/osgi-config-1.5.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

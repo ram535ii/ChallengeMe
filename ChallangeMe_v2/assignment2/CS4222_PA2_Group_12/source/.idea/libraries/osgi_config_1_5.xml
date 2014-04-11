@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="osgi-config-1.5">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/libs/osgi-config-1.5.jar!/" />
+      <root url="jar://$PROJECT_DIR$/libs/osgi.core.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$PROJECT_DIR$/libs/osgi.core.jar!/OSGI-OPT/src" />
+    </SOURCES>
+  </library>
+</component>
