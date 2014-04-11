@@ -52,7 +52,7 @@ public class challengeScreen extends Activity {
         setContentView(R.layout.challange_layout);
 
         //initialise sensor controller
-        controller = new SensorController(this,true,true);
+        //controller = new SensorController(this,true,true);
 
         gameButton = (ToggleButton) findViewById(R.id.toggleButton);
 
@@ -89,7 +89,7 @@ public class challengeScreen extends Activity {
             startTime = SystemClock.uptimeMillis();
             customHandler.postDelayed(updateTimerThread, 0);
 
-            TVmaxHeight.setText("Max Height: " + (controller.getMaxHeight()));
+            //TVmaxHeight.setText("Max Height: " + (controller.getMaxHeight()));
             TVheight.setText("Current Height: " + (controller.getHeight()));
 
             //Set text for done button

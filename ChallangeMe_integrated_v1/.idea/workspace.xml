@@ -67,6 +67,23 @@
       </breakpoint>
     </breakpoint_any>
     <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
+    <line_breakpoints>
+      <breakpoint url="file://$PROJECT_DIR$/src/com/example/ChallangeMe_v1/challengeScreen.java" line="88" class="com.example.ChallangeMe_v1.challengeScreen" package="com.example.ChallangeMe_v1">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="REMOVE_AFTER_HIT" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+    </line_breakpoints>
     <breakpoint_rules />
     <ui_properties />
   </component>
@@ -76,60 +93,46 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="challengeScreen.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="challengeScreen.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/example/ChallangeMe_v1/challengeScreen.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="144" column="38" selection-start="4584" selection-end="4584" vertical-scroll-proportion="0.6559633" vertical-offset="1874" max-vertical-offset="2355">
+            <state line="92" column="0" selection-start="2699" selection-end="2699" vertical-scroll-proportion="0.0" vertical-offset="1230" max-vertical-offset="2295">
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#3554#4615#0" expanded="true" />
-                <element signature="e#4607#4608#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="main.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/example/ChallangeMe_v1/main.java">
+      <file leaf-file-name="Baro.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/example/ChallangeMe_v1/Baro.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="39" column="40" selection-start="1122" selection-end="1131" vertical-scroll-proportion="0.0" vertical-offset="271" max-vertical-offset="840">
+            <state line="100" column="14" selection-start="3416" selection-end="3416" vertical-scroll-proportion="0.0" vertical-offset="472" max-vertical-offset="1905">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="main.xml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/res/layout/main.xml">
-          <provider editor-type-id="android-designer">
-            <state />
-          </provider>
+      <file leaf-file-name="SensorController.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/com/example/ChallangeMe_v1/SensorController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="55" column="35" selection-start="2120" selection-end="2120" vertical-scroll-proportion="-8.634615" vertical-offset="376" max-vertical-offset="975">
-              <folding />
+            <state line="52" column="21" selection-start="1910" selection-end="1910" vertical-scroll-proportion="-0.75501114" vertical-offset="1119" max-vertical-offset="1815">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="challange_layout.xml" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/res/layout/challange_layout.xml">
-          <provider editor-type-id="android-designer">
-            <state />
-          </provider>
           <provider selected="true" editor-type-id="text-editor">
-            <state line="38" column="36" selection-start="1716" selection-end="1716" vertical-scroll-proportion="3.5769231" vertical-offset="756" max-vertical-offset="1155">
-              <folding>
-                <element signature="e#3006#3024#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="strings.xml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/res/values/strings.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="38" selection-start="38" selection-end="38" vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="360">
+            <state line="38" column="36" selection-start="1716" selection-end="1716" vertical-scroll-proportion="3.8461537" vertical-offset="770" max-vertical-offset="1155">
               <folding />
             </state>
+          </provider>
+          <provider editor-type-id="android-designer">
+            <state />
           </provider>
         </entry>
       </file>
@@ -159,11 +162,11 @@
         <option value="$PROJECT_DIR$/src/com/example/ChallangeMe_v1/GPSAdvanced.java" />
         <option value="$PROJECT_DIR$/src/com/example/ChallangeMe_v1/GPS.java" />
         <option value="$PROJECT_DIR$/src/com/example/ChallangeMe_v1/BaroTracker.java" />
-        <option value="$PROJECT_DIR$/src/com/example/ChallangeMe_v1/SensorController.java" />
         <option value="$PROJECT_DIR$/src/com/example/ChallangeMe_v1/Baro.java" />
         <option value="$PROJECT_DIR$/res/values/strings.xml" />
         <option value="$PROJECT_DIR$/res/layout/challange_layout.xml" />
         <option value="$PROJECT_DIR$/src/com/example/ChallangeMe_v1/challengeScreen.java" />
+        <option value="$PROJECT_DIR$/src/com/example/ChallangeMe_v1/SensorController.java" />
       </list>
     </option>
   </component>
@@ -198,7 +201,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -288,6 +290,7 @@
         </subPane>
       </pane>
       <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -517,7 +520,7 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3298969" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.31664214" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Android" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.29749632" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -581,6 +584,49 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/com/example/ChallangeMe_v1/challengeScreen.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="149" column="0" selection-start="4619" selection-end="4619" vertical-scroll-proportion="0.0" vertical-offset="2235" max-vertical-offset="2355">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/example/ChallangeMe_v1/main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="39" column="40" selection-start="1122" selection-end="1131" vertical-scroll-proportion="0.0" vertical-offset="585" max-vertical-offset="900">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/layout/main.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="55" column="35" selection-start="2120" selection-end="2120" vertical-scroll-proportion="0.0" vertical-offset="376" max-vertical-offset="975">
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/layout/challange_layout.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="38" column="36" selection-start="1716" selection-end="1716" vertical-scroll-proportion="0.0" vertical-offset="570" max-vertical-offset="1155">
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/values/strings.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="38" selection-start="38" selection-end="38" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="360">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/example/ChallangeMe_v1/selectOpponent.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="101" column="24" selection-start="2975" selection-end="2975" vertical-scroll-proportion="0.0" vertical-offset="1515" max-vertical-offset="2385">
@@ -610,13 +656,13 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/res/layout/selectopponent.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state line="76" column="29" selection-start="2967" selection-end="2967" vertical-scroll-proportion="0.0" vertical-offset="284" max-vertical-offset="1410">
           <folding />
         </state>
+      </provider>
+      <provider editor-type-id="android-designer">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/example/ChallangeMe_v1/MyActivity.java">
@@ -634,13 +680,13 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/res/layout/selectopponent.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state line="76" column="29" selection-start="2967" selection-end="2967" vertical-scroll-proportion="0.0" vertical-offset="284" max-vertical-offset="1410">
           <folding />
         </state>
+      </provider>
+      <provider editor-type-id="android-designer">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/example/ChallangeMe_v1/MyActivity.java">
@@ -651,23 +697,23 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/res/layout/scroll_layout.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state line="18" column="44" selection-start="697" selection-end="697" vertical-scroll-proportion="0.45075125" vertical-offset="0" max-vertical-offset="599">
           <folding />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/layout/update_user.xml">
       <provider editor-type-id="android-designer">
         <state />
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/layout/update_user.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state line="71" column="13" selection-start="2937" selection-end="2937" vertical-scroll-proportion="0.77462435" vertical-offset="601" max-vertical-offset="1200">
           <folding />
         </state>
+      </provider>
+      <provider editor-type-id="android-designer">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/example/ChallangeMe_v1/user.java">
@@ -722,77 +768,34 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/res/layout/selectopponent.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state line="73" column="48" selection-start="2689" selection-end="2722" vertical-scroll-proportion="-16.153847" vertical-offset="255" max-vertical-offset="1455">
           <folding />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Documents/programming/adt-bundle-mac-x86_64-20131030/sdk/sources/android-18/android/view/View.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="18383" column="0" selection-start="709110" selection-end="709110" vertical-scroll-proportion="0.0" vertical-offset="272593" max-vertical-offset="278940">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Documents/programming/adt-bundle-mac-x86_64-20131030/sdk/sources/android-18/android/os/Handler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="103" column="0" selection-start="4127" selection-end="4127" vertical-scroll-proportion="0.0" vertical-offset="1168" max-vertical-offset="11640">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Documents/programming/adt-bundle-mac-x86_64-20131030/sdk/sources/android-18/android/os/Looper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="138" column="0" selection-start="4791" selection-end="4791" vertical-scroll-proportion="0.33157894" vertical-offset="1704" max-vertical-offset="4500">
-          <folding />
-        </state>
+      <provider editor-type-id="android-designer">
+        <state />
       </provider>
     </entry>
     <entry file="file://$USER_HOME$/Documents/programming/adt-bundle-mac-x86_64-20131030/sdk/sources/android-18/android/view/ViewGroup.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="458" column="0" selection-start="17267" selection-end="17267" vertical-scroll-proportion="0.0" vertical-offset="6013" max-vertical-offset="98595">
-          <folding />
-        </state>
+        <state line="458" column="0" selection-start="17267" selection-end="17267" vertical-scroll-proportion="0.0" vertical-offset="6013" max-vertical-offset="98595" />
       </provider>
     </entry>
     <entry file="file://$USER_HOME$/Documents/programming/adt-bundle-mac-x86_64-20131030/sdk/sources/android-18/android/widget/LinearLayout.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="83" column="0" selection-start="3063" selection-end="3063" vertical-scroll-proportion="0.0" vertical-offset="714" max-vertical-offset="27585">
-          <folding />
-        </state>
+        <state line="83" column="0" selection-start="3063" selection-end="3063" vertical-scroll-proportion="0.0" vertical-offset="714" max-vertical-offset="27585" />
       </provider>
     </entry>
     <entry file="file://$USER_HOME$/Documents/programming/adt-bundle-mac-x86_64-20131030/sdk/sources/android-18/android/widget/TableLayout.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="93" column="0" selection-start="4215" selection-end="4215" vertical-scroll-proportion="0.0" vertical-offset="894" max-vertical-offset="11310">
-          <folding />
-        </state>
+        <state line="93" column="0" selection-start="4215" selection-end="4215" vertical-scroll-proportion="0.0" vertical-offset="894" max-vertical-offset="11310" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/AndroidManifest.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state line="18" column="19" selection-start="953" selection-end="953" vertical-scroll-proportion="0.0" vertical-offset="175" max-vertical-offset="510">
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Documents/programming/adt-bundle-mac-x86_64-20131030/sdk/sources/android-18/android/app/ActivityThread.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="2173" column="0" selection-start="90621" selection-end="90621" vertical-scroll-proportion="0.0" vertical-offset="30489" max-vertical-offset="74655">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Documents/programming/adt-bundle-mac-x86_64-20131030/sdk/sources/android-18/com/android/internal/os/ZygoteInit.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="10950">
-          <folding>
-            <element signature="e#0#25702#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -827,30 +830,46 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/example/ChallangeMe_v1/SensorController.java">
+    <entry file="file://$PROJECT_DIR$/res/layout/main.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="104" column="55" selection-start="3567" selection-end="3567" vertical-scroll-proportion="0.3979933" vertical-offset="1396" max-vertical-offset="1800">
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#2070#2071#0" expanded="true" />
-            <element signature="e#2089#2090#0" expanded="true" />
-          </folding>
+        <state line="55" column="35" selection-start="2120" selection-end="2120" vertical-scroll-proportion="0.0" vertical-offset="376" max-vertical-offset="975">
+          <folding />
         </state>
       </provider>
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/example/ChallangeMe_v1/Baro.java">
+    <entry file="file://$USER_HOME$/Documents/programming/adt-bundle-mac-x86_64-20131030/sdk/sources/android-18/android/app/Activity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="94" column="47" selection-start="3183" selection-end="3183" vertical-scroll-proportion="-0.5852843" vertical-offset="1435" max-vertical-offset="1905">
+        <state line="5246" column="0" selection-start="220845" selection-end="220845" vertical-scroll-proportion="0.0" vertical-offset="76828" max-vertical-offset="78270">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/res/layout/main.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
+    <entry file="file://$USER_HOME$/Documents/programming/adt-bundle-mac-x86_64-20131030/sdk/sources/android-18/android/app/Instrumentation.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="55" column="35" selection-start="2120" selection-end="2120" vertical-scroll-proportion="-8.634615" vertical-offset="376" max-vertical-offset="975">
+        <state line="1097" column="0" selection-start="42027" selection-end="42027" vertical-scroll-proportion="0.0" vertical-offset="15414" max-vertical-offset="26025" />
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Documents/programming/adt-bundle-mac-x86_64-20131030/sdk/sources/android-18/android/app/ActivityThread.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1397" column="0" selection-start="59464" selection-end="59464" vertical-scroll-proportion="0.0" vertical-offset="19126" max-vertical-offset="74655" />
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Documents/programming/adt-bundle-mac-x86_64-20131030/sdk/sources/android-18/android/os/Handler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="101" column="0" selection-start="4118" selection-end="4118" vertical-scroll-proportion="0.0" vertical-offset="1146" max-vertical-offset="11640" />
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Documents/programming/adt-bundle-mac-x86_64-20131030/sdk/sources/android-18/android/os/Looper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="138" column="0" selection-start="4791" selection-end="4791" vertical-scroll-proportion="0.0" vertical-offset="1711" max-vertical-offset="4500" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/example/ChallangeMe_v1/main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="39" column="40" selection-start="1122" selection-end="1131" vertical-scroll-proportion="0.2791762" vertical-offset="403" max-vertical-offset="840">
           <folding />
         </state>
       </provider>
@@ -863,31 +882,52 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/res/layout/challange_layout.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="38" column="36" selection-start="1716" selection-end="1716" vertical-scroll-proportion="3.8461537" vertical-offset="770" max-vertical-offset="1155">
+          <folding />
+        </state>
+      </provider>
       <provider editor-type-id="android-designer">
         <state />
       </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Documents/programming/adt-bundle-mac-x86_64-20131030/sdk/sources/android-18/com/android/internal/os/ZygoteInit.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="38" column="36" selection-start="1716" selection-end="1716" vertical-scroll-proportion="3.5769231" vertical-offset="756" max-vertical-offset="1155">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-18.428572" vertical-offset="5805" max-vertical-offset="10950">
           <folding>
-            <element signature="e#3006#3024#0" expanded="true" />
+            <element signature="e#0#25702#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/example/ChallangeMe_v1/main.java">
+    <entry file="file://$USER_HOME$/Documents/programming/adt-bundle-mac-x86_64-20131030/sdk/sources/android-18/android/view/View.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="39" column="40" selection-start="1122" selection-end="1131" vertical-scroll-proportion="0.0" vertical-offset="271" max-vertical-offset="840">
+        <state line="3813" column="0" selection-start="148884" selection-end="148884" vertical-scroll-proportion="0.40397352" vertical-offset="55678" max-vertical-offset="278940">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/example/ChallangeMe_v1/challengeScreen.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="144" column="38" selection-start="4584" selection-end="4584" vertical-scroll-proportion="0.6559633" vertical-offset="1874" max-vertical-offset="2355">
+        <state line="92" column="0" selection-start="2699" selection-end="2699" vertical-scroll-proportion="0.0" vertical-offset="1230" max-vertical-offset="2295">
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#3554#4615#0" expanded="true" />
-            <element signature="e#4607#4608#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/example/ChallangeMe_v1/Baro.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="100" column="14" selection-start="3416" selection-end="3416" vertical-scroll-proportion="0.0" vertical-offset="472" max-vertical-offset="1905">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/example/ChallangeMe_v1/SensorController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="52" column="21" selection-start="1910" selection-end="1910" vertical-scroll-proportion="-0.75501114" vertical-offset="1119" max-vertical-offset="1815">
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>

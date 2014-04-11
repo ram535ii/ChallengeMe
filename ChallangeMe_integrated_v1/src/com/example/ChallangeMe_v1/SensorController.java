@@ -52,6 +52,7 @@ public class SensorController{
         longitude = 0;
         latitude = 0;
         height = 0;
+        maxHeight = 0;
     }
 
     /** get/set
