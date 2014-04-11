@@ -59,7 +59,7 @@ public class SensorController{
     public float getHeight(){ return height; }
     public float getLatitude(){ return latitude; }
     public float getLongitude(){ return longitude; }
-    public Location getLocation() { return location; }
+//    public Location getLocation() { return location; }
 
 
     /** class methods **/
