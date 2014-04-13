@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+
+    <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="Select Opponent"
+            android:textSize="40dp"
+            android:gravity="center_horizontal"
+
+            />
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Game type: "
+            android:textSize="20dp"
+            android:id="@+id/gametype"/>
+
+
+    <ScrollView
+            android:id="@+id/scrollView1"
+            android:clickable="true"
+            android:layout_weight="1"
+            android:layout_width="fill_parent"
+            android:layout_marginBottom="50px"
+            android:layout_height="fill_parent">
+    </ScrollView>
+
+        <!-- just draw a red line -->
+        <!--<View-->
+                <!--android:layout_height="2dip"-->
+                <!--android:background="#FF0000" />-->
+
+        <!--&lt;!&ndash; edittext span 2 column &ndash;&gt;-->
+        <!--<TableRow-->
+                <!--android:id="@+id/tableRow3"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:padding="5dip" >-->
+
+            <!--<TextView-->
+                    <!--android:id="@+id/textView2"-->
+                    <!--android:layout_weight="4"-->
+                    <!--android:text="DarkZombie123"-->
+                    <!--android:textAppearance="?android:attr/textAppearanceLarge" />-->
+
+            <!--<Button-->
+                    <!--android:id="@+id/button2"-->
+                    <!--android:layout_weight="1"-->
+                    <!--android:text="Challenge" />-->
+
+
+        <!--</TableRow>-->
+
+        <!--&lt;!&ndash; just draw a red line &ndash;&gt;-->
+        <!--<View-->
+                <!--android:layout_height="2dip"-->
+                <!--android:background="#FF0000" />-->
+
+        <!--<TableRow-->
+                <!--android:id="@+id/tableRow3"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:padding="5dip" >-->
+
+            <!--<TextView-->
+                    <!--android:id="@+id/textView2"-->
+                    <!--android:layout_weight="4"-->
+                    <!--android:text="LiterallyGod69"-->
+                    <!--android:textAppearance="?android:attr/textAppearanceLarge" />-->
+
+            <!--<Button-->
+                    <!--android:id="@+id/button2"-->
+                    <!--android:layout_weight="1"-->
+                    <!--android:text="Challenge"-->
+                    <!--android:onClick="selectGame"-->
+                    <!--/>-->
+
+
+        <!--</TableRow>-->
+
+        <!--&lt;!&ndash; just draw a red line &ndash;&gt;-->
+        <!--<View-->
+                <!--android:layout_height="2dip"-->
+                <!--android:background="#FF0000" />-->
+
+
+</LinearLayout>

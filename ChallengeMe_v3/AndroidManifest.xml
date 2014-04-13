@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          package="nus.dtn.app.broadcast"
+          android:versionCode="1"
+          android:versionName="1.0" >
+
+    <uses-sdk android:minSdkVersion="18"/>
+
+    <supports-screens
+            android:anyDensity="true"
+            android:largeScreens="true"
+            android:normalScreens="true"
+            android:resizeable="true"
+            android:smallScreens="true" />
+
+    <application android:label="@string/app_name" >
+        <activity
+                android:name="com.example.PA2.MyActivity"
+                android:label="@string/app_name"
+                android:screenOrientation="portrait"
+                android:windowSoftInputMode="stateHidden" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+                android:name="com.example.PA2.ShowResult"
+                android:label="@string/title_activity_show_result" >
+            <intent-filter>
+                <action android:name="android.intent.action.showResult" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <activity
+                android:name="com.example.PA2.main"
+                android:label="main_djr" >
+        </activity>
+
+        <activity
+                android:name="com.example.PA2.updateSettings"
+                android:label="updateSettings" >
+        </activity>
+
+        <activity
+                android:name="com.example.PA2.challengeScreen"
+                android:label="challenge screen" >
+        </activity>
+
+        <activity
+                android:name="com.example.PA2.selectOpponent"
+                android:label="main_djr" >
+        </activity>
+
+        <activity
+                android:name="com.example.PA2.BroadcastAppActivity"
+                android:label="main_djr" >
+        </activity>
+
+    </application>
+
+    <!-- To get the IMEI number -->
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+
+</manifest>
