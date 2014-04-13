@@ -50,6 +50,7 @@ public class Baro extends Service implements SensorEventListener{
             sensorManager.registerListener(this, barometerSensor, SensorManager.SENSOR_DELAY_NORMAL);
 
             height = 0;
+            maxHeight = 0;
 
             /** Broadcast Stuff **/
             Toast.makeText(this, "Baro Service Started", Toast.LENGTH_SHORT).show();

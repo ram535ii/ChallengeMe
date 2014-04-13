@@ -123,7 +123,7 @@ public class ShowResult extends Activity {
         try {
 
         /** Communication Code */
-
+        	
 
 //		setContentView(R.layout.challange_layout);
 		handler = new Handler();
@@ -137,7 +137,7 @@ public class ShowResult extends Activity {
 		createToast( "Source: " + source );
 	*/	
         result = (TextView) findViewById(R.id.result);
-        btn = (Button) findViewById(R.id.stop);
+    /*    btn = (Button) findViewById(R.id.stop);
         btn.setOnClickListener(new View.OnClickListener() {
 			
 			@Override
@@ -185,7 +185,7 @@ public class ShowResult extends Activity {
                 createToast ( "Broadcasting message..." );
             } 
         } );
-     
+     */
          // Register a listener for received chat messages
         Listener messageListener = new Listener();
         fwdLayer.addMessageListener ( descriptor , messageListener );
@@ -209,60 +209,7 @@ public class ShowResult extends Activity {
 	            createToast ( "Exception while stopping middleware, check log" );
 	        }*/
 	    }
-    private class Listener implements MessageListener{
-    	 /** {@inheritDoc} */
-        public void onMessageReceived ( String source , 
-                                        String destination , 
-                                        DtnMessage message ){
-        	try{
-        		
-        	/*	if( source.equals( comm.getMyImei() )) 
-        			return;
-        		*/
-        		 // Read the DTN message
-                // Data part
-                message.switchToData();
-               
-               if ( messageType == 3 ){
-                // Put this code in handleUserMessage()
-                byte[] msg = message.readBytes();
-                ByteArrayInputStream bis = new ByteArrayInputStream(msg);
-                ObjectInput in = null;
-                in = new ObjectInputStream(bis);
-                Person p = (Person)in.readObject(); 
-                String info = p.showResults();
-                // Append to the message list
-                final String newText = 
-                    result.getText() + 
-                    "\n" + info;
-
-                //check own results vs their results
-                if(finalHeight > Double.parseDouble("1234")){
-                    handler.post ( new Runnable() {
-                        public void run() {
-                            result.setText ( "You Win" );
-                        }
-                    } );
-                } else {
-                    handler.post ( new Runnable() {
-                        public void run() {
-                            result.setText ( "They Win" );
-                        }
-                    } );
-                }
-
-                // Update the text view in Main UI thread
-
-               }
-        }
-        	catch ( Exception e ) {
-                // Log the exception
-                Log.e ( "BroadcastApp" , "Exception on message event" , e );
-                // Tell the user
-                createToast ( "Exception on message event, check log" );
-            }
-    }
-    }
+   
 	 /** Helper method to create toasts. */
     private void createToast ( String toastMessage ) {
 
@@ -369,6 +316,7 @@ public class ShowResult extends Activity {
 
                     // Tell the user that the message has been sent
                     createToast ( "Chat message broadcast!" );
+                    
                 }
                 catch ( Exception e ) {
                     // Log the exception
@@ -380,7 +328,65 @@ public class ShowResult extends Activity {
         }
 
     };
+    
+    private class Listener implements MessageListener{
+   	 /** {@inheritDoc} */
+       public void onMessageReceived ( String source , 
+                                       String destination , 
+                                       DtnMessage message ){
+       	try{
+       		
+       	/*	if( source.equals( comm.getMyImei() )) 
+       			return;
+       		*/
+       		 // Read the DTN message
+               // Data part
+               message.switchToData();
+              
+              if ( messageType == 3 ){
+               // Put this code in handleUserMessage()
+               byte[] msg = message.readBytes();
+               ByteArrayInputStream bis = new ByteArrayInputStream(msg);
+               ObjectInput in = null;
+               in = new ObjectInputStream(bis);
+               Person p = (Person)in.readObject(); 
+               String info = p.showResults();
+               // Append to the message list
+               final String newText = 
+                   result.getText() + 
+                   "\n" + info;
 
+               //check own results vs their results
+               if(finalHeight > Double.parseDouble("1234")){
+                   handler.post ( new Runnable() {
+                       public void run() {
+                           result.setText ( "You Win" );
+                       }
+                   } );
+               } else {
+                   handler.post ( new Runnable() {
+                       public void run() {
+                           result.setText ( "They Win" );
+                       }
+                   } );
+               }
+		
+               // Update the text view in Main UI thread
+         /*      handler.post ( new Runnable() {
+                   public void run() {
+                       result.setText ( newText );
+              }
+               }); */
+               }
+       	}
+       	catch ( Exception e ) {
+               // Log the exception
+               Log.e ( "BroadcastApp" , "Exception on message event" , e );
+               // Tell the user
+               createToast ( "Exception on message event, check log" );
+           }
+   }
+   }
     private Intent intent;
 
 

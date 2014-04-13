@@ -105,84 +105,7 @@ public class BroadcastAppActivity extends Activity {
         }
     }
 
-    /** Listener for received chat messages. */
-    private class ChatMessageListener
-            implements MessageListener {
-
-        /** {@inheritDoc} */
-        public void onMessageReceived ( final String source ,
-                                        String destination ,
-                                        DtnMessage message ) {
-
-            try {
-
-
-                // Read the DTN message
-                // Data part
-                message.switchToData();
-
-                if ( messageType == 1 ){
-                    // Put this code in handleUserMessage()
-                    byte[] msg = message.readBytes();
-                    ByteArrayInputStream bis = new ByteArrayInputStream(msg);
-                    ObjectInput in = null;
-                    in = new ObjectInputStream(bis);
-                    Person p = (Person)in.readObject();
-                    String info = p.infotoString();
-                    // Append to the message list
-                    final String newText =
-                            textView_Message.getText() +
-                                    "\n" + source + " 's info " + info;
-
-                    // Update the text view in Main UI thread
-                    handler.post ( new Runnable() {
-                        public void run() {
-                            textView_Message.setText ( newText );
-                        }
-
-                    } );
-
-                }
-                //type two message => sent challenge
-                if (messageType == 2) {
-                    AlertDialog.Builder ad = new AlertDialog.Builder(context);
-                    ad.setTitle("ChallengeMe");
-                    ad.setMessage("Do you want to start a competition?");
-                    ad.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
-                        public void onClick(DialogInterface dialog, int which) {
-                            messageType = 0;
-
-
-                            Intent intent = new Intent(BroadcastAppActivity.this ,ShowResult.class);
-
-                            //int someid = v.getId();
-
-                            //activityChangeIntent.putExtra(CHALLANGE_GAME_TYPE, gameType);
-                            //activityChangeIntent.putExtra(CHALLANGE_OPPONENT, Integer.toString(someid));
-
-                            startActivity(intent);
-                        }
-                    });
-                    ad.setNegativeButton("No", new DialogInterface.OnClickListener() {
-                        public void onClick(DialogInterface dialog, int which) {
-                            dialog.cancel();
-                        }
-                    });
-
-                    AlertDialog alertDialog = ad.create();
-                    alertDialog.show();
-
-                }
-
-            }
-            catch ( Exception e ) {
-                // Log the exception
-                Log.e ( "BroadcastApp" , "Exception on message event" , e );
-                // Tell the user
-                createToast ( "Exception on message event, check log" );
-            }
-        }
-    }
+   
 
     /** Helper method to create toasts. */
     private void createToast ( String toastMessage ) {
@@ -309,7 +232,84 @@ public class BroadcastAppActivity extends Activity {
         sv.addView(hsv);
     }
 
+    /** Listener for received chat messages. */
+    private class ChatMessageListener
+            implements MessageListener {
 
+        /** {@inheritDoc} */
+        public void onMessageReceived ( final String source ,
+                                        String destination ,
+                                        DtnMessage message ) {
+
+            try {
+
+
+                // Read the DTN message
+                // Data part
+                message.switchToData();
+
+                if ( messageType == 1 ){
+                    // Put this code in handleUserMessage()
+                    byte[] msg = message.readBytes();
+                    ByteArrayInputStream bis = new ByteArrayInputStream(msg);
+                    ObjectInput in = null;
+                    in = new ObjectInputStream(bis);
+                    Person p = (Person)in.readObject();
+                    String info = p.infotoString();
+                    // Append to the message list
+                    final String newText =
+                            textView_Message.getText() +
+                                    "\n" + source + " 's info " + info;
+
+                    // Update the text view in Main UI thread
+                    handler.post ( new Runnable() {
+                        public void run() {
+                            textView_Message.setText ( newText );
+                        }
+
+                    } );
+
+                }
+                //type two message => sent challenge
+                if (messageType == 2) {
+                    AlertDialog.Builder ad = new AlertDialog.Builder(context);
+                    ad.setTitle("ChallengeMe");
+                    ad.setMessage("Do you want to start a competition?");
+                    ad.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int which) {
+                            messageType = 0;
+
+
+                            Intent intent = new Intent(BroadcastAppActivity.this ,ShowResult.class);
+
+                            //int someid = v.getId();
+
+                            //activityChangeIntent.putExtra(CHALLANGE_GAME_TYPE, gameType);
+                            //activityChangeIntent.putExtra(CHALLANGE_OPPONENT, Integer.toString(someid));
+
+                            startActivity(intent);
+                        }
+                    });
+                    ad.setNegativeButton("No", new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int which) {
+                            dialog.cancel();
+                        }
+                    });
+
+                    AlertDialog alertDialog = ad.create();
+                    alertDialog.show();
+
+                }
+
+            }
+            catch ( Exception e ) {
+                // Log the exception
+                Log.e ( "BroadcastApp" , "Exception on message event" , e );
+                // Tell the user
+                createToast ( "Exception on message event, check log" );
+            }
+        }
+    }
 
     /** Text View (displays messages). */
     private TextView textView_Message;
