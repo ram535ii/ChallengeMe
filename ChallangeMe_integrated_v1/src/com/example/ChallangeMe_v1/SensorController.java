@@ -62,7 +62,7 @@ public class SensorController{
     public float getMaxHeight() {return maxHeight; }
     public float getLatitude(){ return latitude; }
     public float getLongitude(){ return longitude; }
-    public Location getLocation() { return location; }
+//    public Location getLocation() { return location; }
 
 
     /** class methods **/
@@ -108,10 +108,10 @@ public class SensorController{
         } else if(action.equals("com.example.Sensor.broadcastGPS")){
             //TODO
             latitude = intent.getFloatExtra("latitude", 0);
-            location.setLatitude(latitude);
+//            location.setLatitude(latitude);
 
             longitude = intent.getFloatExtra("longitude", 0);
-            location.setLongitude(longitude);
+//            location.setLongitude(longitude);
 
         }
     }
