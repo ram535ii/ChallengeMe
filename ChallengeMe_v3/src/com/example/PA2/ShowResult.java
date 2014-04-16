@@ -36,8 +36,8 @@ import android.widget.Toast;
 
 public class ShowResult extends Activity {
 	
-	TextView result;
-	Button btn;
+	private TextView result;
+	private Button btn;
 	private Handler handler;
 	 int messageType;
 	// DTN Middleware API.
@@ -93,7 +93,7 @@ public class ShowResult extends Activity {
         controller = new SensorController(this,true,false);
 
         gameButton = (ToggleButton) findViewById(R.id.toggleButton);
-
+        btn = (Button)findViewById(R.id.startGameButton);
         /** INTENT Taken OUT but should be placed back in asap */
         intent = getIntent();
         gameType = "bla"; //intent.getStringExtra(selectOpponent.CHALLANGE_GAME_TYPE);
@@ -131,61 +131,8 @@ public class ShowResult extends Activity {
 		comm = Communication.getInstance( getApplicationContext() , handler );
 		fwdLayer = comm.getFwdLayer();
 		descriptor = comm.getDescriptor();
-		
-	/*	Intent intent = getIntent();
-		source = intent.getStringExtra("source");
-		createToast( "Source: " + source );
-	*/	
-        result = (TextView) findViewById(R.id.result);
-    /*    btn = (Button) findViewById(R.id.stop);
-        btn.setOnClickListener(new View.OnClickListener() {
-			
-			@Override
-			public void onClick(View v) {
-				 // Good practise to do I/O in a new thread
-                Thread clickThread = new Thread() {
-                        public void run() {
+		 result = (TextView) findViewById(R.id.challengeResult);
 
-                            try {
-
-                                // Construct the DTN message
-                                DtnMessage message = new DtnMessage();
-                                messageType = 3;
-                                Person person = new Person();
-                                person.setName("Dummy");
-                                person.setAge(22);
-                                person.setSpeed("14km/h");
-                                ByteArrayOutputStream bos = new ByteArrayOutputStream();
-                                ObjectOutput out = null;
-                                out = new ObjectOutputStream(bos);   
-                                out.writeObject(person);
-                                out.close();
-                                byte[] bt = bos.toByteArray();
-                                // Data part
-                                message.addData()                  // Create data chunk
-                                    .writeBytes(bt);  // Chat message
-
-                                // Broadcast the message using the fwd layer interface
-                                fwdLayer.sendMessage ( descriptor , message , "everyone" , null );
-
-                                // Tell the user that the message has been sent
-                                createToast ( "Chat message broadcast!" );
-                            }
-                            catch ( Exception e ) {
-                                // Log the exception
-                                Log.e ( "BroadcastApp" , "Exception while sending message" , e );
-                                // Inform the user
-                                createToast ( "Exception while sending message, check log" );
-                            }
-                        }
-                    };
-                clickThread.start();
-
-                // Inform the user
-                createToast ( "Broadcasting message..." );
-            } 
-        } );
-     */
          // Register a listener for received chat messages
         Listener messageListener = new Listener();
         fwdLayer.addMessageListener ( descriptor , messageListener );
@@ -256,7 +203,7 @@ public class ShowResult extends Activity {
         }
     }
 
-    private Runnable updateTimerThread = new Runnable() {
+   private Runnable updateTimerThread = new Runnable() {
 
         public void run() {
 
@@ -293,14 +240,15 @@ public class ShowResult extends Activity {
 
                     // Construct the DTN message
                     DtnMessage message = new DtnMessage();
-                    messageType = 3;
+                    messageType = 5;
                     Person person = new Person();
 
 
 
-                    person.setName(player.getName());
-                    person.setAge(player.getAge());
-                    person.setSpeed(Double.toString(finalHeight));
+                    person.setName("abcs");
+                    person.setAge(20);
+                //    person.setSpeed(Double.toString(finalHeight));
+                    person.setSpeed("10km/h");
                     ByteArrayOutputStream bos = new ByteArrayOutputStream();
                     ObjectOutput out = null;
                     out = new ObjectOutputStream(bos);
@@ -308,7 +256,8 @@ public class ShowResult extends Activity {
                     out.close();
                     byte[] bt = bos.toByteArray();
                     // Data part
-                    message.addData()                  // Create data chunk
+                    message.addData()   
+                            .writeInt(messageType)  // Create data chunk
                             .writeBytes(bt);  // Chat message
 
                     // Broadcast the message using the fwd layer interface
@@ -335,15 +284,16 @@ public class ShowResult extends Activity {
                                        String destination , 
                                        DtnMessage message ){
        	try{
-       		
+       		Log.e("DtnMsg", "Received a message");
        	/*	if( source.equals( comm.getMyImei() )) 
        			return;
        		*/
        		 // Read the DTN message
                // Data part
                message.switchToData();
-              
-              if ( messageType == 3 ){
+              messageType = message.readInt();
+              if ( messageType == 5 ){
+            	  Log.e("DtnMsg", "Received a race result");
                // Put this code in handleUserMessage()
                byte[] msg = message.readBytes();
                ByteArrayInputStream bis = new ByteArrayInputStream(msg);
@@ -355,9 +305,9 @@ public class ShowResult extends Activity {
                final String newText = 
                    result.getText() + 
                    "\n" + info;
-
+               Log.e("DtnMsg", "Race result: " + info );
                //check own results vs their results
-               if(finalHeight > Double.parseDouble("1234")){
+         /*      if(finalHeight > Double.parseDouble("1234")){
                    handler.post ( new Runnable() {
                        public void run() {
                            result.setText ( "You Win" );
@@ -370,13 +320,13 @@ public class ShowResult extends Activity {
                        }
                    } );
                }
-		
+*/		
                // Update the text view in Main UI thread
-         /*      handler.post ( new Runnable() {
+               handler.post ( new Runnable() {
                    public void run() {
                        result.setText ( newText );
               }
-               }); */
+               }); 
                }
        	}
        	catch ( Exception e ) {

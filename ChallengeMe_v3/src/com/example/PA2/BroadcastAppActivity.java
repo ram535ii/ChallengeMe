@@ -178,12 +178,13 @@ public class BroadcastAppActivity extends Activity {
 
                                 // Construct the DTN message
                                 DtnMessage message = new DtnMessage();
-                                messageType = 2;
+                                messageType = 4;
 
 
                                 // Data part
-                                message.addData()                  // Create data chunk
-                                        .writeInt(messageType);  // Chat message
+                                message.addData()  
+                                                            // Create data chunk
+                                           .writeInt(messageType);  // Chat message
 
                                 // Broadcast the message using the fwd layer interface
                                 comm.getFwdLayer().sendMessage ( comm.getDescriptor() , message , "everyone" , null );
@@ -243,12 +244,12 @@ public class BroadcastAppActivity extends Activity {
 
             try {
 
-
+            	Log.e("DtnMsg", "Received a message");
                 // Read the DTN message
                 // Data part
                 message.switchToData();
-
-                if ( messageType == 1 ){
+                messageType = message.readInt();
+            /*    if ( messageType == 1 ){
                     // Put this code in handleUserMessage()
                     byte[] msg = message.readBytes();
                     ByteArrayInputStream bis = new ByteArrayInputStream(msg);
@@ -269,15 +270,15 @@ public class BroadcastAppActivity extends Activity {
 
                     } );
 
-                }
+                } */
                 //type two message => sent challenge
-                if (messageType == 2) {
+                if (messageType == 4) {
                     AlertDialog.Builder ad = new AlertDialog.Builder(context);
                     ad.setTitle("ChallengeMe");
                     ad.setMessage("Do you want to start a competition?");
                     ad.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                         public void onClick(DialogInterface dialog, int which) {
-                            messageType = 0;
+                           
 
 
                             Intent intent = new Intent(BroadcastAppActivity.this ,ShowResult.class);
